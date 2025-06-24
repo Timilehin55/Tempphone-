@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Account Settings - TempPhone</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ftempphone6374back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background font-inter">
+    <!-- Global Header Navigation -->
+    <header class="bg-surface shadow-sm border-b border-secondary-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 4c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zm-6 8c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zm12 0c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zm-6 8c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-semibold text-text-primary">TempPhone</h1>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="phone_number_selection_dashboard.html" class="text-text-secondary hover:text-text-primary px-3 py-2 rounded-md hover:bg-secondary-100 transition-colors">Dashboard</a>
+                    <a href="sms_message_inbox.html" class="text-text-secondary hover:text-text-primary px-3 py-2 rounded-md hover:bg-secondary-100 transition-colors">Messages</a>
+                    <a href="voice_call_log.html" class="text-text-secondary hover:text-text-primary px-3 py-2 rounded-md hover:bg-secondary-100 transition-colors">Calls</a>
+                    <a href="number_management_center.html" class="text-text-secondary hover:text-text-primary px-3 py-2 rounded-md hover:bg-secondary-100 transition-colors">Manage</a>
+                </nav>
+
+                <!-- Service Status & Account Menu -->
+                <div class="flex items-center space-x-4">
+                    <!-- Service Status Indicator -->
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-success rounded-full animate-pulse-gentle"></div>
+                        <span class="text-sm text-text-secondary hidden sm:inline">Online</span>
+                    </div>
+
+                    <!-- Account Menu -->
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 text-text-secondary hover:text-text-primary transition-colors">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Avatar" class="w-8 h-8 rounded-full object-cover" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute right-0 mt-2 w-48 bg-surface rounded-lg shadow-lg border border-secondary-200 hidden">
+                            <a href="user_account_settings.html" class="block px-4 py-2 text-sm text-primary font-medium hover:bg-secondary-100 rounded-t-lg">Account Settings</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-text-secondary hover:bg-secondary-100">Billing</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-text-secondary hover:bg-secondary-100 rounded-b-lg">Sign Out</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 rounded-md text-text-secondary hover:text-text-primary hover:bg-secondary-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="md:hidden border-t border-secondary-200 bg-surface">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="phone_number_selection_dashboard.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-md">Dashboard</a>
+                <a href="sms_message_inbox.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-md">Messages</a>
+                <a href="voice_call_log.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-md">Calls</a>
+                <a href="number_management_center.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-md">Manage</a>
+                <a href="user_account_settings.html" class="block px-3 py-2 text-primary font-medium bg-primary-50 rounded-md">Settings</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <!-- Breadcrumb Navigation -->
+        <nav class="flex mb-6" aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-2 text-sm">
+                <li>
+                    <a href="phone_number_selection_dashboard.html" class="text-text-secondary hover:text-text-primary transition-colors">Dashboard</a>
+                </li>
+                <li>
+                    <svg class="w-4 h-4 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </li>
+                <li class="text-text-primary font-medium">Account Settings</li>
+            </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-semibold text-text-primary mb-2">Account Settings</h1>
+            <p class="text-text-secondary">Manage your profile, notifications, and service preferences</p>
+        </div>
+
+        <!-- Settings Layout -->
+        <div class="lg:flex lg:gap-8">
+            <!-- Settings Navigation (Desktop Sidebar) -->
+            <div class="hidden lg:block lg:w-64 lg:flex-shrink-0">
+                <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6 sticky top-24">
+                    <nav class="space-y-2">
+                        <button class="w-full text-left px-4 py-3 text-primary font-medium bg-primary-50 rounded-lg transition-colors" onclick="showTab('profile')">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                </svg>
+                                <span>Profile Information</span>
+                            </div>
+                        </button>
+                        <button class="w-full text-left px-4 py-3 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-lg transition-colors" onclick="showTab('notifications')">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM9 7h6m0 10v-3M9 7V4a2 2 0 012-2h2a2 2 0 012 2v3M9 7H6a2 2 0 00-2 2v10a2 2 0 002 2h3"/>
+                                </svg>
+                                <span>Notifications</span>
+                            </div>
+                        </button>
+                        <button class="w-full text-left px-4 py-3 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-lg transition-colors" onclick="showTab('privacy')">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                <span>Privacy Settings</span>
+                            </div>
+                        </button>
+                        <button class="w-full text-left px-4 py-3 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-lg transition-colors" onclick="showTab('billing')">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                                </svg>
+                                <span>Billing Management</span>
+                            </div>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Mobile Tab Navigation -->
+            <div class="lg:hidden mb-6">
+                <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-4">
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="px-3 py-2 text-sm font-medium text-primary bg-primary-50 rounded-lg transition-colors" onclick="showTab('profile')">Profile</button>
+                        <button class="px-3 py-2 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-lg transition-colors" onclick="showTab('notifications')">Notifications</button>
+                        <button class="px-3 py-2 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-lg transition-colors" onclick="showTab('privacy')">Privacy</button>
+                        <button class="px-3 py-2 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-lg transition-colors" onclick="showTab('billing')">Billing</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="flex-1">
+                <!-- Profile Information Tab -->
+                <div id="profile-tab" class="tab-content">
+                    <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6 mb-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-semibold text-text-primary">Profile Information</h2>
+                            <button class="text-sm text-primary hover:text-primary-700 font-medium transition-colors">
+                                Export Data
+                            </button>
+                        </div>
+
+                        <form class="space-y-6">
+                            <!-- Profile Picture -->
+                            <div class="flex items-center space-x-6">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile Picture" class="w-20 h-20 rounded-full object-cover border-4 border-secondary-200" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                    <button class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full hover:bg-primary-700 transition-colors">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-medium text-text-primary">Profile Picture</h3>
+                                    <p class="text-sm text-text-secondary">Update your profile photo</p>
+                                    <button type="button" class="mt-2 text-sm text-primary hover:text-primary-700 font-medium">
+                                        Change Photo
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Username -->
+                            <div>
+                                <label for="username" class="block text-sm font-medium text-text-primary mb-2">Username</label>
+                                <input type="text" id="username" value="john_doe_2025" class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
+                                <p class="mt-1 text-sm text-text-secondary">Your unique username for the service</p>
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-text-primary mb-2">Email Address</label>
+                                <input type="email" id="email" value="john.doe@example.com" class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
+                                <p class="mt-1 text-sm text-text-secondary">Used for account notifications and recovery</p>
+                            </div>
+
+                            <!-- Timezone -->
+                            <div>
+                                <label for="timezone" class="block text-sm font-medium text-text-primary mb-2">Timezone</label>
+                                <select id="timezone" class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors">
+                                    <option value="UTC-5">Eastern Time (UTC-5)</option>
+                                    <option value="UTC-6">Central Time (UTC-6)</option>
+                                    <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                    <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                    <option value="UTC+0">Greenwich Mean Time (UTC+0)</option>
+                                    <option value="UTC+1">Central European Time (UTC+1)</option>
+                                    <option value="UTC+5:30">India Standard Time (UTC+5:30)</option>
+                                </select>
+                            </div>
+
+                            <!-- Date Format -->
+                            <div>
+                                <label for="date-format" class="block text-sm font-medium text-text-primary mb-2">Date Format</label>
+                                <select id="date-format" class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors">
+                                    <option value="MM/DD/YYYY">MM/DD/YYYY (US Format)</option>
+                                    <option value="DD/MM/YYYY">DD/MM/YYYY (European Format)</option>
+                                    <option value="YYYY-MM-DD">YYYY-MM-DD (ISO Format)</option>
+                                </select>
+                            </div>
+
+                            <!-- Time Format -->
+                            <div>
+                                <label for="time-format" class="block text-sm font-medium text-text-primary mb-2">Time Format</label>
+                                <select id="time-format" class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors">
+                                    <option value="12">12-hour format (AM/PM)</option>
+                                    <option value="24">24-hour format</option>
+                                </select>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-secondary-200">
+                                <button type="submit" class="flex-1 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                    Save Changes
+                                </button>
+                                <button type="button" class="flex-1 bg-secondary-100 text-text-secondary px-6 py-3 rounded-lg hover:bg-secondary-200 transition-colors font-medium">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Password Change Section -->
+                    <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Change Password</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="current-password" class="block text-sm font-medium text-text-primary mb-2">Current Password</label>
+                                <input type="password" id="current-password" class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
+                            </div>
+                            <div>
+                                <label for="new-password" class="block text-sm font-medium text-text-primary mb-2">New Password</label>
+                                <input type="password" id="new-password" class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
+                            </div>
+                            <div>
+                                <label for="confirm-password" class="block text-sm font-medium text-text-primary mb-2">Confirm New Password</label>
+                                <input type="password" id="confirm-password" class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
+                            </div>
+                            <button type="submit" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                Update Password
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Notifications Tab -->
+                <div id="notifications-tab" class="tab-content hidden">
+                    <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6">
+                        <h2 class="text-xl font-semibold text-text-primary mb-6">Notification Preferences</h2>
+                        
+                        <div class="space-y-6">
+                            <!-- SMS Notifications -->
+                            <div class="flex items-center justify-between py-4 border-b border-secondary-200">
+                                <div>
+                                    <h3 class="text-base font-medium text-text-primary">SMS Alerts</h3>
+                                    <p class="text-sm text-text-secondary">Get notified when new SMS messages arrive</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" checked class="sr-only peer" />
+                                    <div class="w-11 h-6 bg-secondary-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-100 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-secondary-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                </label>
+                            </div>
+
+                            <!-- Email Notifications -->
+                            <div class="flex items-center justify-between py-4 border-b border-secondary-200">
+                                <div>
+                                    <h3 class="text-base font-medium text-text-primary">Email Notifications</h3>
+                                    <p class="text-sm text-text-secondary">Receive email summaries of your messages</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" />
+                                    <div class="w-11 h-6 bg-secondary-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-100 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-secondary-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                </label>
+                            </div>
+
+                            <!-- Call Notifications -->
+                            <div class="flex items-center justify-between py-4 border-b border-secondary-200">
+                                <div>
+                                    <h3 class="text-base font-medium text-text-primary">Voice Call Alerts</h3>
+                                    <p class="text-sm text-text-secondary">Get notified about incoming voice calls</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" checked class="sr-only peer" />
+                                    <div class="w-11 h-6 bg-secondary-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-100 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-secondary-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                </label>
+                            </div>
+
+                            <!-- Expiration Warnings -->
+                            <div class="flex items-center justify-between py-4 border-b border-secondary-200">
+                                <div>
+                                    <h3 class="text-base font-medium text-text-primary">Number Expiration Warnings</h3>
+                                    <p class="text-sm text-text-secondary">Alert me before my numbers expire</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" checked class="sr-only peer" />
+                                    <div class="w-11 h-6 bg-secondary-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-100 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-secondary-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                </label>
+                            </div>
+
+                            <!-- Notification Frequency -->
+                            <div class="py-4">
+                                <h3 class="text-base font-medium text-text-primary mb-3">Notification Frequency</h3>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="frequency" value="instant" checked class="border-secondary-300 text-primary focus:ring-primary" />
+                                        <span class="ml-2 text-sm text-text-secondary">Instant notifications</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="frequency" value="hourly" class="border-secondary-300 text-primary focus:ring-primary" />
+                                        <span class="ml-2 text-sm text-text-secondary">Hourly digest</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="frequency" value="daily" class="border-secondary-300 text-primary focus:ring-primary" />
+                                        <span class="ml-2 text-sm text-text-secondary">Daily summary</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t border-secondary-200">
+                            <button type="submit" class="flex-1 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                Save Preferences
+                            </button>
+                            <button type="button" class="flex-1 bg-secondary-100 text-text-secondary px-6 py-3 rounded-lg hover:bg-secondary-200 transition-colors font-medium">
+                                Reset to Default
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Settings Tab -->
+                <div id="privacy-tab" class="tab-content hidden">
+                    <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6">
+                        <h2 class="text-xl font-semibold text-text-primary mb-6">Privacy Settings</h2>
+                        
+                        <div class="space-y-6">
+                            <!-- Data Retention -->
+                            <div class="py-4 border-b border-secondary-200">
+                                <h3 class="text-base font-medium text-text-primary mb-3">Data Retention</h3>
+                                <p class="text-sm text-text-secondary mb-4">Choose how long to keep your message history</p>
+                                <select class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors">
+                                    <option value="7">7 days</option>
+                                    <option value="30" selected>30 days</option>
+                                    <option value="90">90 days</option>
+                                    <option value="365">1 year</option>
+                                    <option value="forever">Keep forever</option>
+                                </select>
+                            </div>
+
+                            <!-- Auto-Delete Messages -->
+                            <div class="flex items-center justify-between py-4 border-b border-secondary-200">
+                                <div>
+                                    <h3 class="text-base font-medium text-text-primary">Auto-Delete Messages</h3>
+                                    <p class="text-sm text-text-secondary">Automatically delete messages after reading</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" />
+                                    <div class="w-11 h-6 bg-secondary-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-100 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-secondary-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                </label>
+                            </div>
+
+                            <!-- Account Visibility -->
+                            <div class="py-4 border-b border-secondary-200">
+                                <h3 class="text-base font-medium text-text-primary mb-3">Account Visibility</h3>
+                                <p class="text-sm text-text-secondary mb-4">Control who can see your account activity</p>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="visibility" value="private" checked class="border-secondary-300 text-primary focus:ring-primary" />
+                                        <span class="ml-2 text-sm text-text-secondary">Private (recommended)</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="visibility" value="limited" class="border-secondary-300 text-primary focus:ring-primary" />
+                                        <span class="ml-2 text-sm text-text-secondary">Limited visibility</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Two-Factor Authentication -->
+                            <div class="py-4">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <h3 class="text-base font-medium text-text-primary">Two-Factor Authentication</h3>
+                                        <p class="text-sm text-text-secondary">Add an extra layer of security to your account</p>
+                                    </div>
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning-100 text-warning-600">
+                                        Not Enabled
+                                    </span>
+                                </div>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                    Enable 2FA
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t border-secondary-200">
+                            <button type="submit" class="flex-1 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                Save Privacy Settings
+                            </button>
+                            <button type="button" class="flex-1 bg-error text-white px-6 py-3 rounded-lg hover:bg-error-600 transition-colors font-medium">
+                                Delete Account
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Billing Management Tab -->
+                <div id="billing-tab" class="tab-content hidden">
+                    <div class="space-y-6">
+                        <!-- Usage Statistics -->
+                        <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6">
+                            <h2 class="text-xl font-semibold text-text-primary mb-6">Current Usage</h2>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-primary mb-2">247</div>
+                                    <div class="text-sm text-text-secondary">Messages Received</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-primary mb-2">18</div>
+                                    <div class="text-sm text-text-secondary">Voice Calls</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-3xl font-bold text-primary mb-2">12</div>
+                                    <div class="text-sm text-text-secondary">Numbers Used</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Subscription Plan -->
+                        <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-lg font-semibold text-text-primary">Current Plan</h3>
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-success-100 text-success-600">
+                                    Free Plan
+                                </span>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center py-2 border-b border-secondary-200">
+                                    <span class="text-text-secondary">Monthly SMS limit</span>
+                                    <span class="font-medium text-text-primary">100 messages</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2 border-b border-secondary-200">
+                                    <span class="text-text-secondary">Voice call duration</span>
+                                    <span class="font-medium text-text-primary">30 minutes</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2 border-b border-secondary-200">
+                                    <span class="text-text-secondary">Number retention</span>
+                                    <span class="font-medium text-text-primary">30 minutes</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2">
+                                    <span class="text-text-secondary">Premium numbers</span>
+                                    <span class="font-medium text-text-primary">Not included</span>
+                                </div>
+                            </div>
+
+                            <button class="w-full mt-6 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                Upgrade to Premium
+                            </button>
+                        </div>
+
+                        <!-- Payment Methods -->
+                        <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-lg font-semibold text-text-primary">Payment Methods</h3>
+                                <button class="text-sm text-primary hover:text-primary-700 font-medium transition-colors">
+                                    Add Payment Method
+                                </button>
+                            </div>
+                            
+                            <div class="text-center py-8">
+                                <svg class="w-12 h-12 text-secondary-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                                </svg>
+                                <p class="text-text-secondary">No payment methods added</p>
+                                <p class="text-sm text-text-secondary mt-1">Add a payment method to upgrade your plan</p>
+                            </div>
+                        </div>
+
+                        <!-- Billing History -->
+                        <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6">
+                            <h3 class="text-lg font-semibold text-text-primary mb-6">Billing History</h3>
+                            
+                            <div class="text-center py-8">
+                                <svg class="w-12 h-12 text-secondary-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                <p class="text-text-secondary">No billing history</p>
+                                <p class="text-sm text-text-secondary mt-1">Your billing history will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Toast Notification -->
+    <div id="success-toast" class="fixed top-4 right-4 bg-success text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>Settings saved successfully!</span>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Tab switching functionality
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => tab.classList.add('hidden'));
+            
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.remove('hidden');
+            
+            // Update navigation buttons (desktop)
+            const desktopButtons = document.querySelectorAll('.lg\\:block nav button');
+            desktopButtons.forEach(btn => {
+                btn.classList.remove('text-primary', 'font-medium', 'bg-primary-50');
+                btn.classList.add('text-text-secondary', 'hover:text-text-primary', 'hover:bg-secondary-100');
+            });
+            
+            // Update navigation buttons (mobile)
+            const mobileButtons = document.querySelectorAll('.lg\\:hidden .grid button');
+            mobileButtons.forEach(btn => {
+                btn.classList.remove('text-primary', 'bg-primary-50');
+                btn.classList.add('text-text-secondary', 'hover:text-text-primary', 'hover:bg-secondary-100');
+            });
+            
+            // Highlight active button
+            const activeDesktopButton = document.querySelector(`[onclick="showTab('${tabName}')"]`);
+            if (activeDesktopButton) {
+                activeDesktopButton.classList.remove('text-text-secondary', 'hover:text-text-primary', 'hover:bg-secondary-100');
+                activeDesktopButton.classList.add('text-primary', 'font-medium', 'bg-primary-50');
+            }
+        }
+
+        // Show success toast
+        function showSuccessToast() {
+            const toast = document.getElementById('success-toast');
+            toast.classList.remove('translate-x-full');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+            }, 3000);
+        }
+
+        // Form submission handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.querySelector('.md\\:hidden + div');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Account dropdown toggle
+            const accountButton = document.querySelector('.relative button');
+            const accountDropdown = document.querySelector('.absolute.right-0');
+            
+            if (accountButton && accountDropdown) {
+                accountButton.addEventListener('click', function() {
+                    accountDropdown.classList.toggle('hidden');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!accountButton.contains(event.target) && !accountDropdown.contains(event.target)) {
+                        accountDropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Form submissions
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    showSuccessToast();
+                });
+            });
+
+            // Toggle switches
+            const toggles = document.querySelectorAll('input[type="checkbox"]');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('change', function() {
+                    // Simulate saving preference
+                    setTimeout(() => {
+                        showSuccessToast();
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Number Selection Dashboard - TempPhone</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ftempphone6374back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+</head>
+<body class="bg-background font-inter">
+    <!-- Global Header Navigation -->
+    <header class="bg-surface shadow-sm border-b border-secondary-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 4c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zm-6 8c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zm12 0c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zm-6 8c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-semibold text-text-primary">TempPhone</h1>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="phone_number_selection_dashboard.html" class="text-primary font-medium px-3 py-2 rounded-md bg-primary-50">Dashboard</a>
+                    <a href="sms_message_inbox.html" class="text-text-secondary hover:text-text-primary px-3 py-2 rounded-md hover:bg-secondary-100 transition-colors">Messages</a>
+                    <a href="voice_call_log.html" class="text-text-secondary hover:text-text-primary px-3 py-2 rounded-md hover:bg-secondary-100 transition-colors">Calls</a>
+                    <a href="number_management_center.html" class="text-text-secondary hover:text-text-primary px-3 py-2 rounded-md hover:bg-secondary-100 transition-colors">Manage</a>
+                </nav>
+
+                <!-- Service Status & Account Menu -->
+                <div class="flex items-center space-x-4">
+                    <!-- Service Status Indicator -->
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-success rounded-full animate-pulse-gentle"></div>
+                        <span class="text-sm text-text-secondary hidden sm:inline">Online</span>
+                    </div>
+
+                    <!-- Account Menu -->
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 text-text-secondary hover:text-text-primary transition-colors">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Avatar" class="w-8 h-8 rounded-full object-cover" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute right-0 mt-2 w-48 bg-surface rounded-lg shadow-lg border border-secondary-200 hidden">
+                            <a href="user_account_settings.html" class="block px-4 py-2 text-sm text-text-secondary hover:bg-secondary-100 rounded-t-lg">Account Settings</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-text-secondary hover:bg-secondary-100">Billing</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-text-secondary hover:bg-secondary-100 rounded-b-lg">Sign Out</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 rounded-md text-text-secondary hover:text-text-primary hover:bg-secondary-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="md:hidden border-t border-secondary-200 bg-surface">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="phone_number_selection_dashboard.html" class="block px-3 py-2 text-primary font-medium bg-primary-50 rounded-md">Dashboard</a>
+                <a href="sms_message_inbox.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-md">Messages</a>
+                <a href="voice_call_log.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-md">Calls</a>
+                <a href="number_management_center.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-md">Manage</a>
+                <a href="user_account_settings.html" class="block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-secondary-100 rounded-md">Settings</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-semibold text-text-primary mb-2">Select Phone Number</h1>
+            <p class="text-text-secondary">Choose a temporary phone number to receive SMS and voice calls</p>
+        </div>
+
+        <!-- Search and Filter Section -->
+        <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6 mb-6">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Country Filter -->
+                <div class="flex-1">
+                    <label for="country-filter" class="block text-sm font-medium text-text-primary mb-2">Country</label>
+                    <select id="country-filter" class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors">
+                        <option value>All Countries</option>
+                        <option value="US">🇺🇸 United States</option>
+                        <option value="UK">🇬🇧 United Kingdom</option>
+                        <option value="CA">🇨🇦 Canada</option>
+                        <option value="AU">🇦🇺 Australia</option>
+                        <option value="DE">🇩🇪 Germany</option>
+                        <option value="FR">🇫🇷 France</option>
+                        <option value="IN">🇮🇳 India</option>
+                    </select>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex-1">
+                    <label for="search-numbers" class="block text-sm font-medium text-text-primary mb-2">Search Numbers</label>
+                    <div class="relative">
+                        <input type="text" id="search-numbers" placeholder="Search by area code or region..." class="w-full px-4 py-3 pl-10 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
+                        <svg class="absolute left-3 top-3.5 w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Number Type Filter -->
+                <div class="flex-1">
+                    <label for="number-type" class="block text-sm font-medium text-text-primary mb-2">Number Type</label>
+                    <select id="number-type" class="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors">
+                        <option value>All Types</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="landline">Landline</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Filter Actions -->
+            <div class="flex justify-between items-center mt-4 pt-4 border-t border-secondary-200">
+                <div class="text-sm text-text-secondary">
+                    <span id="results-count">247</span> numbers available
+                </div>
+                <button class="text-sm text-primary hover:text-primary-700 font-medium transition-colors">
+                    Clear Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- Desktop Layout: Sidebar + Main Content -->
+        <div class="lg:flex lg:gap-6">
+            <!-- Filter Sidebar (Desktop) -->
+            <div class="hidden lg:block lg:w-64 lg:flex-shrink-0">
+                <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6 sticky top-24">
+                    <h3 class="font-semibold text-text-primary mb-4">Advanced Filters</h3>
+                    
+                    <!-- Region Filter -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-medium text-text-primary mb-3">Region</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded border-secondary-300 text-primary focus:ring-primary" />
+                                <span class="ml-2 text-sm text-text-secondary">North America</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded border-secondary-300 text-primary focus:ring-primary" />
+                                <span class="ml-2 text-sm text-text-secondary">Europe</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded border-secondary-300 text-primary focus:ring-primary" />
+                                <span class="ml-2 text-sm text-text-secondary">Asia Pacific</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Availability Filter -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-medium text-text-primary mb-3">Availability</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="availability" class="border-secondary-300 text-primary focus:ring-primary" />
+                                <span class="ml-2 text-sm text-text-secondary">Available Now</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="availability" class="border-secondary-300 text-primary focus:ring-primary" />
+                                <span class="ml-2 text-sm text-text-secondary">Recently Used</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div>
+                        <h4 class="text-sm font-medium text-text-primary mb-3">Price Range</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="price" class="border-secondary-300 text-primary focus:ring-primary" />
+                                <span class="ml-2 text-sm text-text-secondary">Free</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="price" class="border-secondary-300 text-primary focus:ring-primary" />
+                                <span class="ml-2 text-sm text-text-secondary">Premium ($0.99)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phone Numbers Grid -->
+            <div class="flex-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="numbers-grid">
+                    <!-- Phone Number Card 1 -->
+                    <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow card-elevated">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">🇺🇸</span>
+                                <div>
+                                    <div class="font-mono text-lg font-semibold text-text-primary">+1 (555) 123-4567</div>
+                                    <div class="text-sm text-text-secondary">New York, NY</div>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success-100 text-success-600">
+                                Available
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-sm text-text-secondary">
+                                <div>Type: Mobile</div>
+                                <div>Duration: 30 minutes</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-lg font-semibold text-text-primary">Free</div>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                Select Number
+                            </button>
+                            <button class="p-2 border border-secondary-200 rounded-lg hover:bg-secondary-100 transition-colors" onclick="copyToClipboard('+1 (555) 123-4567')" title="Copy number">
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Phone Number Card 2 -->
+                    <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow card-elevated">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">🇬🇧</span>
+                                <div>
+                                    <div class="font-mono text-lg font-semibold text-text-primary">+44 20 1234 5678</div>
+                                    <div class="text-sm text-text-secondary">London, UK</div>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success-100 text-success-600">
+                                Available
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-sm text-text-secondary">
+                                <div>Type: Landline</div>
+                                <div>Duration: 1 hour</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-lg font-semibold text-text-primary">Free</div>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                Select Number
+                            </button>
+                            <button class="p-2 border border-secondary-200 rounded-lg hover:bg-secondary-100 transition-colors" onclick="copyToClipboard('+44 20 1234 5678')" title="Copy number">
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Phone Number Card 3 -->
+                    <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow card-elevated">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">🇨🇦</span>
+                                <div>
+                                    <div class="font-mono text-lg font-semibold text-text-primary">+1 (416) 987-6543</div>
+                                    <div class="text-sm text-text-secondary">Toronto, ON</div>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning-100 text-warning-600">
+                                Busy
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-sm text-text-secondary">
+                                <div>Type: Mobile</div>
+                                <div>Duration: 45 minutes</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-lg font-semibold text-text-primary">Free</div>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-secondary-300 text-secondary-500 px-4 py-2 rounded-lg cursor-not-allowed font-medium" disabled>
+                                Currently Busy
+                            </button>
+                            <button class="p-2 border border-secondary-200 rounded-lg hover:bg-secondary-100 transition-colors" onclick="copyToClipboard('+1 (416) 987-6543')" title="Copy number">
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Phone Number Card 4 -->
+                    <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow card-elevated">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">🇦🇺</span>
+                                <div>
+                                    <div class="font-mono text-lg font-semibold text-text-primary">+61 2 9876 5432</div>
+                                    <div class="text-sm text-text-secondary">Sydney, NSW</div>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-600">
+                                Premium
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-sm text-text-secondary">
+                                <div>Type: Mobile</div>
+                                <div>Duration: 2 hours</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-lg font-semibold text-text-primary">$0.99</div>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                Select Premium
+                            </button>
+                            <button class="p-2 border border-secondary-200 rounded-lg hover:bg-secondary-100 transition-colors" onclick="copyToClipboard('+61 2 9876 5432')" title="Copy number">
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Phone Number Card 5 -->
+                    <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow card-elevated">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">🇩🇪</span>
+                                <div>
+                                    <div class="font-mono text-lg font-semibold text-text-primary">+49 30 1234 5678</div>
+                                    <div class="text-sm text-text-secondary">Berlin, Germany</div>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success-100 text-success-600">
+                                Available
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-sm text-text-secondary">
+                                <div>Type: Landline</div>
+                                <div>Duration: 1 hour</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-lg font-semibold text-text-primary">Free</div>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                Select Number
+                            </button>
+                            <button class="p-2 border border-secondary-200 rounded-lg hover:bg-secondary-100 transition-colors" onclick="copyToClipboard('+49 30 1234 5678')" title="Copy number">
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Phone Number Card 6 -->
+                    <div class="bg-surface rounded-lg shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow card-elevated">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">🇮🇳</span>
+                                <div>
+                                    <div class="font-mono text-lg font-semibold text-text-primary">+91 98765 43210</div>
+                                    <div class="text-sm text-text-secondary">Mumbai, India</div>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success-100 text-success-600">
+                                Available
+                            </span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-sm text-text-secondary">
+                                <div>Type: Mobile</div>
+                                <div>Duration: 30 minutes</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-lg font-semibold text-text-primary">Free</div>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                                Select Number
+                            </button>
+                            <button class="p-2 border border-secondary-200 rounded-lg hover:bg-secondary-100 transition-colors" onclick="copyToClipboard('+91 98765 43210')" title="Copy number">
+                                <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-8">
+                    <button class="bg-secondary-100 text-text-secondary px-6 py-3 rounded-lg hover:bg-secondary-200 transition-colors font-medium">
+                        Load More Numbers
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Selected Numbers Bottom Drawer -->
+    <div class="fixed bottom-0 left-0 right-0 bg-surface border-t border-secondary-200 shadow-lg transform translate-y-full transition-transform duration-300" id="selected-drawer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 hover:bg-secondary-100 rounded-lg transition-colors" onclick="toggleDrawer()">
+                        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div>
+                        <h3 class="font-semibold text-text-primary">Selected Numbers (2)</h3>
+                        <p class="text-sm text-text-secondary">Expires in 28 minutes</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <a href="sms_message_inbox.html" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium btn-primary">
+                        View Messages
+                    </a>
+                    <button class="text-text-secondary hover:text-text-primary transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Copy to clipboard functionality
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Show success feedback
+                const button = event.target.closest('button');
+                const originalHTML = button.innerHTML;
+                button.innerHTML = '<svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+                button.classList.add('animate-scale-success');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.classList.remove('animate-scale-success');
+                }, 1500);
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        // Toggle selected numbers drawer
+        function toggleDrawer() {
+            const drawer = document.getElementById('selected-drawer');
+            drawer.classList.toggle('translate-y-full');
+        }
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.querySelector('.md\\:hidden + div');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Account dropdown toggle
+            const accountButton = document.querySelector('.relative button');
+            const accountDropdown = document.querySelector('.absolute.right-0');
+            
+            if (accountButton && accountDropdown) {
+                accountButton.addEventListener('click', function() {
+                    accountDropdown.classList.toggle('hidden');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!accountButton.contains(event.target) && !accountDropdown.contains(event.target)) {
+                        accountDropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Simulate selected numbers drawer visibility
+            setTimeout(() => {
+                toggleDrawer();
+            }, 2000);
+        });
+
+        // Filter functionality
+        document.getElementById('country-filter').addEventListener('change', function() {
+            // Simulate filtering - in real app, this would filter the numbers
+            const resultsCount = document.getElementById('results-count');
+            const randomCount = Math.floor(Math.random() * 200) + 50;
+            resultsCount.textContent = randomCount;
+        });
+
+        document.getElementById('search-numbers').addEventListener('input', function() {
+            // Simulate search - in real app, this would search the numbers
+            const resultsCount = document.getElementById('results-count');
+            const randomCount = Math.floor(Math.random() * 150) + 25;
+            resultsCount.textContent = randomCount;
+        });
+    </script>
+</body>
+</html>
